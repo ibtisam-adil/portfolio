@@ -6,8 +6,8 @@
     <title>HTML</title>
     <link href="style.css" rel="stylesheet">
 </head>
-
 <body>
+
     <!-- navbar -->
     <nav>
         <div class="navbar">
@@ -33,12 +33,12 @@
     <section class="hero-section-p">
         <div class="hero-section">
             <div class="header-logo">
-                <h1>
+                <h1 class="Bold">
                     I'm Ibtisam.
                     </br>
                     glad to see you!
                 </h1>
-                <p>
+                <p class="p-size">
                     I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hesitate to contact me.
                 </p>
                 <p id="f-link">
@@ -63,7 +63,7 @@
             </div>
             <div class="card-content">
                 <div class="content-heading">
-                    <h3>Tonic</h3>
+                    <h3 class="Bold-h">Tonic</h3>
                     <div class="info">
                         <p>CANOPY</p>
                         <img src="./assets/images/dot.png"/>
@@ -72,7 +72,7 @@
                         <p class="light">2015</p>
                     </div>
                 </div>
-                <p class="description">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
+                <p class="p-size">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
                 <div class="content-lang">
                     <p>html</p>
                     <p>css</p>
@@ -96,7 +96,7 @@
                         <p class="light">2015</p>
                     </div>
                 </div>
-                <p class="description">Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.</p>
+                <p class="p-size">Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.</p>
                 <div class="content-lang">
                     <p>html</p>
                     <p>css</p>
@@ -120,7 +120,7 @@
                         <p class="light">2015</p>
                     </div>
                 </div>
-                <p class="description">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
+                <p class="p-size">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
                 <div class="content-lang">
                     <p>html</p>
                     <p>css</p>
@@ -144,7 +144,7 @@
                         <p class="light">2015</p>
                     </div>
                 </div>
-                <p class="description">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
+                <p class="p-size">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
                 <div class="content-lang">
                     <p>html</p>
                     <p>css</p>
@@ -153,33 +153,73 @@
                 <button id="btn">See projects</button>
             </div>
         </div>
-        
-        <!-- <div class="card-two">
-            <div class="card2-content">
-                <div class="content-heading">
-                    <h3>Multi-Post Stories</h3>
-                    <div class="info">
-                        <p>FACEBOOK</p>
-                        <img src="./assets/images/dot.png"/>
-                        <p class="light">Full Stack Dev</p>
-                        <img src="./assets/images/dot.png"/>
-                        <p class="light">2015</p>
-                    </div>
-                </div>
-                <p class="card2-description">Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.
-                </p>
-                <div class="content-lang">
-                    <p>html</p>
-                    <p>Ruby on rails</p>
-                    <p>css</p>
-                    <p>javascript</p>
-                </div>
-                <button id="btn">See projects</button>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="sec-3">
+        <div class="sec-about">
+            <div class="myself">
+              <h4 class="Bold-h4">About Myself</h4>
+              <p class="p-size">Hello I’m a software developer! I can help you build a product, feature, or website. Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hesitate to contact me.</p>
+              <p id="f-link">LET'S CONNECT</p>
+              <div class="s-icon">
+                <img src="assets/images/twitter.png">
+                <img src="assets/images/Linkedin.png">
+                <img src="assets/images/M.png">
+                <img src="assets/images/Github.png">
+                <img src="assets/images/V.png">
+              </div>
+              <button class="btn-2">Get my resume</button>
             </div>
-            <div class="card2-img">
-                <img src="./assets/images/multi_2.png"/>
+        </div>
+          
+          <div class="sec-skills">
+            <div class="arrow-style">
+                <p class="bold-p align">Languages</p>
+                <img class="arrow" src="assets/images/downarrow.png">
             </div>
-        </div> -->
+                
+              <div class="lang">
+                <div class="boxs">
+                    <img src="assets/images/js.png">
+                    <p>JavaScript</p>
+                </div>
+                <div class="boxs">
+                    <img src="assets/images/html.png">
+                    <p>HTML</p>
+                </div>
+                <div class="boxs">
+                    <img src="assets/images/css.png">
+                    <p>CSS</p>
+                </div>
+              </div>
+            <div class="arrow-style">
+                <p class="bold-p">Frameworks</p>
+                <img class="arrow" src="assets/images/arrow.png"> 
+            </div>
+            <div class="line"></div>
+            <div class="arrow-style">
+                <p class="bold-p align-2">Skills</p>
+                <img class="arrow" src="assets/images/arrow.png"> 
+            </div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-sec">
+        <div class="contact-wrapper">
+            <div class="main">
+                <h5>Contact me</h5>
+                <p>If you have an application you are interested in developing, a feature that you need built or a project that needscoding. I’d love to help with it!</p>
+            </div>
+            <form>
+                <input type="text" placeholder="Lorem">
+                <input type="email" placeholder="@mail.com">
+                <textarea rows="10" cols="45" placeholder="Write your message here..." ></textarea>
+                <button class="btn-2 mod" >Get in touch</button> 
+            </form>
+        </div>
     </section>
 </body>
 </html>
