@@ -3,45 +3,49 @@
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background-color: #f4f5f7;
 }
 
 nav {
   background-color: #fff;
+  padding: 10px 15rem;
 }
 
 .navbar {
-  max-width: 1300px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 142px;
 }
 
 .navbar h2 {
   color: #6070ff;
+  font-size: 2.5rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 2rem;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: black;
+  font-size: 2rem;
 }
 
 .header-logo {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.5rem;
 }
 
 .Bold {
-  font-size: 60px;
+  font-size: 6rem;
 }
 
 .hero-section-p {
@@ -51,12 +55,12 @@ nav {
   background-repeat: no-repeat;
   background-color: #fff;
   border-bottom-left-radius: 90px;
-  padding: 250px;
+  padding: 25rem;
 }
 
 .s-icon {
   display: flex;
-  gap: 14px;
+  gap: 1.4rem;
 }
 
 .s-icon img {
@@ -67,6 +71,7 @@ nav {
 #f-link {
   color: #6070ff;
   padding-top: 15px;
+  font-size: 1.7rem;
 }
 
 .card-one {
@@ -86,7 +91,7 @@ nav {
 
 .content-heading h3 {
   padding-bottom: 15px;
-  font-size: 45px;
+  font-size: 4.5rem;
 }
 
 .info {
@@ -116,29 +121,28 @@ nav {
   border-radius: 10px;
 }
 
-#btn {
+.btn {
+  font-size: 1.1rem;
   font-weight: bold;
   padding: 15px;
-  width: 120px;
+  width: 12rem;
   border-radius: 10px;
   border: 1px solid #6070ff;
   color: #6070ff;
-  background-color: white;;
+  background-color: white;
 }
 
 .card-img img {
   margin: 15px;
-  width: 544px;
-  height: 448px;
+  width: 90%;
+  height: 95%;
 }
 
 .cards {
   display: flex;
   flex-direction: column;
-  padding: 142px;
-  gap: 142px;
-  max-width: 1300px;
-  margin: 0 auto;
+  padding: 15rem;
+  gap: 14rem;
 }
 
 .f-reverse {
@@ -155,13 +159,13 @@ nav {
   width: 50%;
   display: inline-block;
   vertical-align: top;
-  padding: 20px;
+  padding: 20px 0;
   box-sizing: border-box;
 }
 
 .myself {
   background-color: white;
-  padding: 20px;
+  padding: 20px 0;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -174,7 +178,8 @@ nav {
 }
 
 .p-size {
-  font-size: 20px;
+  font-size: 2rem;
+  line-height: 1.3em;
 }
 
 .sec-skills {
@@ -200,18 +205,18 @@ nav {
 .sec-3 {
   display: flex;
   background-color: white;
-  padding: 142px;
+  padding: 15rem;
   border-radius: 0 150px 0 0;
 }
 
 .Bold-h4 {
-  font-size: 45px;
+  font-size: 4.5rem;
 }
 
 .boxs {
   background-color: #f7f7f9;
-  width: 122px;
-  height: 120px;
+  width: 12rem;
+  height: 12rem;
   padding: 12px;
 }
 
@@ -223,6 +228,7 @@ nav {
   display: flex;
   flex-direction: column;
   padding-top: 16px;
+  font-size: 1.5rem;
 }
 
 .lang {
@@ -234,11 +240,10 @@ nav {
 .arrow-style {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.arrow-style img {
-  padding-left: 430px;
-}
+
 
 .align {
   padding-right: 24px;
@@ -248,24 +253,13 @@ nav {
   padding-right: 68px;
 }
 
-.btn-2 {
-  font-weight: bold;
-  font-size: 15px;
-  width: 135px;
-  height: 55px;
-  border-radius: 10px;
-  border: 1px solid #6070ff;
-  color: #6070ff;
-  background-color: white;
-}
-
 .contact-sec {
   background-color: #6070ff;
   background-image: url("./assets/images/bg-contact-form-big.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 100px 0;
+  padding: 10rem 0;
 }
 
 .contact-wrapper {
@@ -303,11 +297,122 @@ textarea {
 
 .main p {
   text-align: center;
-  width: 500px;
+  width: 42%;
   font-size: 20px;
   line-height: 30px;
 }
 
 .main h5 {
   font-size: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.content-p {
+  font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 60%;
+  }
+
+  .cards {
+    padding: 8rem;
+    gap: 10rem;
+  }
+
+  nav {
+    padding: 10px 8rem;
+  }
+
+  .hero-section-p {
+    padding: 17rem;
+  }
+
+  .card-content {
+    gap: 15px;
+  }
+
+  .content-p {
+    font-size: 1.8rem;
+  }
+
+  .sec-3 {
+    padding: 8rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 52%;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  nav {
+    padding: 10px 6rem;
+  }
+
+  .hero-section-p {
+    padding: 10rem;
+  }
+
+  .Bold {
+    font-size: 4rem;
+  }
+
+  .cards {
+    padding: 6rem;
+    gap: 6rem;
+  }
+
+  .card-one {
+    flex-direction: column;
+  }
+
+  .sec-3 {
+    flex-direction: column;
+    padding: 6rem;
+  }
+
+  .sec-skills {
+    padding: 0;
+  }
+
+  .sec-about,
+  .sec-skills {
+    width: 100%;
+  } 
+}
+
+@media(max-width: 600px) {
+  .card-content {
+    padding: 15px 20px;
+  }
+
+  .boxs {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    height: 6rem;
+  }
+
+  .lang {
+    flex-direction: column;
+  }
+
+  .main p{
+    width: 80%
+  }
 }
