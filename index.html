@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML</title>
     <link href="style.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('.btn');
+    
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    this.style.backgroundColor = '#2230d2';
+                    this.style.color = 'white';
+                });
+            });
+        });
+    </script>
+    
+    
 </head>
 <body>
 
@@ -57,6 +72,54 @@
 
     <!-- cards -->
     <section class="cards">
+        <!-- <div class="card-one">
+            <div class="card-img">
+                <img src="./assets/images/poppic.svg"/>
+            </div>
+            <div class="card-content">
+                <div class="content-heading">
+                    <h3 class="Bold-h">Tonic</h3>
+                    <div class="info">
+                        <p>CANOPY</p>
+                        <img src="./assets/images/dot.png"/>
+                        <p class="light">Back End Dev</p>
+                        <img src="./assets/images/dot.png"/>
+                        <p class="light">2015</p>
+                    </div>
+                </div>
+                <p class="content-p">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
+                <div class="content-lang">
+                    <p>html</p>
+                    <p>css</p>
+                    <p>javascript</p>
+                </div>
+                <button class="btn">See projects</button>
+            </div>
+        </div> -->
+        <!-- <div class="card-one ">
+            <div class="card-img">
+                <img src="./assets/images/poppic.svg"/>
+            </div>
+            <div class="card-content">
+                <div class="content-heading">
+                    <h3 class="Bold-h">Tonic</h3>
+                    <div class="info">
+                        <p>CANOPY</p>
+                        <img src="./assets/images/dot.png"/>
+                        <p class="light">Back End Dev</p>
+                        <img src="./assets/images/dot.png"/>
+                        <p class="light">2015</p>
+                    </div>
+                </div>
+                <p class="content-p">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
+                <div class="content-lang">
+                    <p>html</p>
+                    <p>css</p>
+                    <p>javascript</p>
+                </div>
+                <button class="btn">See projects</button>
+            </div>
+        </div>
         <div class="card-one">
             <div class="card-img">
                 <img src="./assets/images/poppic.svg"/>
@@ -81,37 +144,13 @@
                 <button class="btn">See projects</button>
             </div>
         </div>
-        <div class="card-one f-reverse" >
-            <div class="card-img">
-                <img src="./assets/images/poppic.svg"/>
-            </div>
-            <div class="card-content">
-                <div class="content-heading">
-                    <h3>Tonic</h3>
-                    <div class="info">
-                        <p>CANOPY</p>
-                        <img src="./assets/images/dot.png"/>
-                        <p class="light">Back End Dev</p>
-                        <img src="./assets/images/dot.png"/>
-                        <p class="light">2015</p>
-                    </div>
-                </div>
-                <p class="content-p">Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.</p>
-                <div class="content-lang">
-                    <p>html</p>
-                    <p>css</p>
-                    <p>javascript</p>
-                </div>
-                <button class="btn">See projects</button>
-            </div>
-        </div>
         <div class="card-one">
             <div class="card-img">
                 <img src="./assets/images/poppic.svg"/>
             </div>
             <div class="card-content">
                 <div class="content-heading">
-                    <h3>Tonic</h3>
+                    <h3 class="Bold-h">Tonic</h3>
                     <div class="info">
                         <p>CANOPY</p>
                         <img src="./assets/images/dot.png"/>
@@ -128,31 +167,7 @@
                 </div>
                 <button class="btn">See projects</button>
             </div>
-        </div>
-        <div class="card-one f-reverse">
-            <div class="card-img">
-                <img src="./assets/images/poppic.svg"/>
-            </div>
-            <div class="card-content">
-                <div class="content-heading">
-                    <h3>Tonic</h3>
-                    <div class="info">
-                        <p>CANOPY</p>
-                        <img src="./assets/images/dot.png"/>
-                        <p class="light">Back End Dev</p>
-                        <img src="./assets/images/dot.png"/>
-                        <p class="light">2015</p>
-                    </div>
-                </div>
-                <p class="content-p">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-                <div class="content-lang">
-                    <p>html</p>
-                    <p>css</p>
-                    <p>javascript</p>
-                </div>
-                <button class="btn">See projects</button>
-            </div>
-        </div>
+        </div> -->
     </section>
 
     <!-- ABOUT -->
@@ -221,5 +236,6 @@
             </form>
         </div>
     </section>
+    <script src="data.js"></script>
 </body>
 </html>
