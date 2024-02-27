@@ -9,6 +9,8 @@ html {
 
 body {
   background-color: #f4f5f7;
+  /* backdrop-filter: brightness(0.5); */
+  backdrop-filter: blur(10px)
 }
 
 nav {
@@ -32,35 +34,33 @@ nav {
   gap: 2rem;
 }
 
-
 .navbar a {
   text-decoration: none;
   color: black;
   font-size: 2rem;
   color: var(--text-color);
   margin-left: 1.1rem;
-  transition: color 0.3s; 
+  transition: color 0.3s;
   position: relative;
 }
 
 .navbar a::before {
   content: "";
   position: absolute;
-  width: 0; 
+  width: 0;
   height: 2px;
   bottom: -5px;
-  left: 50%; 
+  left: 50%;
   background-color: #0ef;
   visibility: hidden;
-  transition: all 0.3s ease-in-out; 
-  transform: translateX(-50%); 
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
 }
 
 .navbar a:hover::before {
-  width: 100%; 
+  width: 100%;
   visibility: visible;
 }
-
 
 .header-logo {
   display: flex;
@@ -143,7 +143,9 @@ nav {
 
 .content-lang {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  font-size: 1.35rem;
 }
 
 .content-lang p {
@@ -165,10 +167,9 @@ nav {
   transition: all 0.2s ease-in-out 0s;
 }
 
-
 .btn:hover {
   color: white;
-  background-color: #6070FF;
+  background-color: #6070ff;
 }
 
 .card-img img {
@@ -347,6 +348,102 @@ textarea {
   font-size: 2rem;
 }
 
+.pop-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  z-index: 1000; */
+}
+
+.pop-card span {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.desc-p {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  padding-bottom: 8px;
+  opacity: 0.7;
+}
+
+.popcard-desc {
+  display: flex;
+  flex-direction: column;
+  max-width: 670px;
+}
+
+.popcard-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.popcard-img img {
+  width: 100%;
+  height: auto;
+}
+
+.pop-btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 20px 0 0;
+}
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1000px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  z-index: 1000;
+
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  z-index: 1000;  */
+
+}
+
+.open-popup {
+  visibility: visible;
+}
+
+
+
 @media (max-width: 1024px) {
   html {
     font-size: 60%;
@@ -460,5 +557,3 @@ textarea {
     order: 2;
   }
 } */
-
-
