@@ -7,10 +7,9 @@ html {
   font-size: 62.5%;
 }
 
+
 body {
   background-color: #f4f5f7;
-  /* backdrop-filter: brightness(0.5); */
-  backdrop-filter: blur(10px)
 }
 
 nav {
@@ -183,6 +182,7 @@ nav {
   flex-direction: column;
   padding: 15rem;
   gap: 14rem;
+  position: relative;
 }
 
 .line {
@@ -340,7 +340,7 @@ textarea {
   font-size: 50px;
 }
 
-.hidden {
+.hide {
   display: none;
 }
 
@@ -352,30 +352,27 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
   width: 90%;
   max-width: 1000px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  visibility: hidden;
-  z-index: 1000; */
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
-.pop-card span {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
+.hidden {
+  display: none;
+}
+
+.pop-card #close-popup {
+  text-align: end;
   cursor: pointer;
   font-size: 30px;
+  padding-right:20px ;
 }
 
 .desc-p {
@@ -409,38 +406,26 @@ textarea {
   margin: 20px 20px 0 0;
 }
 
-.popup {
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 1000px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  visibility: hidden;
-  z-index: 1000;
-
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  width: 90%;
-  max-width: 1000px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  visibility: hidden;
-  z-index: 1000;  */
-
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 10;
+  display: none;
 }
 
 .open-popup {
-  visibility: visible;
+  display: block;
 }
+
+
 
 
 
@@ -546,14 +531,3 @@ textarea {
   }
 }
 
-/* By grids
- 
-@media (min-width: 768px) {
-  .card-one {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .card-one:nth-child(even) > .card-img {
-    order: 2;
-  }
-} */

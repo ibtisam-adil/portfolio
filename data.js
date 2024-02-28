@@ -9,7 +9,7 @@ let arr = [
     { img: "./assets/images/poppic.svg", name: "Uber Navigation", desc: "A smart assistant to make driving more safe, efficient, and fun by unlocking your most expensive computer: your car.", work: ['UBER', 'Lead Developer', '2018'], lang: ['html', 'css', 'javaScript', 'Ruby on rails']}
 ];
 
-let cardHTMLs = arr.map((val)=>{
+let cardHTMLs = arr.map((val,i)=>{
     return `
         <div class="card-one">
             <div class="card-img">
@@ -34,7 +34,7 @@ let cardHTMLs = arr.map((val)=>{
                     <p>${val.lang[3]}</p>
                     
                 </div>
-                <button class="btn" onclick="openPopup()">See projects</button>
+                <button class="btn" onclick="openPopup(${i})">See projects</button>
             </div>
         </div>
     `;
@@ -42,12 +42,55 @@ let cardHTMLs = arr.map((val)=>{
 
 sectionCard.innerHTML = cardHTMLs.join('');
 
-let popup = document.getElementById("popup");
 
-function openPopup(){
+let a = document.querySelector(".popup")
+
+function openPopup(i){
+    let b = arr[i]
+    console.log(b)
+    a.innerHTML = `
+    <div class="overlay"></div>
+        <div class="pop-card">
+            <p id="close-popup" onclick="closePopup()">&times;</p>
+            <div class="content-heading">
+                <h3 class="Bold-h">Tonic</h3>
+                <div class="info">
+                    <p>CANOPY</p>
+                    <img src="./assets/images/dot.png"/>
+                    <p class="light">Back End Dev</p>
+                    <img src="./assets/images/dot.png"/>
+                    <p class="light">2015</p>
+                </div>
+            </div>
+            <div class="popcard-img">
+                <img src="${b.img}"/>
+            </div>
+            <div class="popcard-content">
+                <div class="popcard-desc">
+                    <p class="desc-p">${b.desc}</p>
+                    </div>
+                <div class="btn-lang">
+                    <div class="content-lang">
+                        <p>html</p>
+                        <p>css</p>
+                        <p>javascript</p>
+                        <p>ruby</p>
+                        <p>bootstrap</p>
+                    </div>
+                    <div class="pop-btn">
+                        <button class="btn">See Live</button>
+                        <button class="btn">See Source</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+    let popup = document.querySelector(".overlay");
     popup.classList.add("open-popup");
+    a.classList.remove("hide");
 }
 
 function closePopup(){
     popup.classList.remove("open-popup");
+    a.classList.add("hide");
 }
