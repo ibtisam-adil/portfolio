@@ -4,44 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML</title>
-    <link href="style.css" rel="stylesheet">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var buttons = document.querySelectorAll('.btn');
-    
-            buttons.forEach(function(button) {
-                button.addEventListener('click', function() {
-                    this.style.backgroundColor = '#2230d2';
-                    this.style.color = 'white';
-                });
-            });
-        });
-    </script>
-    
-    
+    <!-- box-icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- custom css -->
+    <link href="style.css" rel="stylesheet">  
 </head>
+
 <body>
-    <!-- navbar -->
-    <nav>
-        <div class="navbar">
-            <h2>    
-                My Logo
-            </h2>
-            <img class="hidden" src="./assets/images/menu.png" alt="Menu icon" />
-            <div class="nav-links">
-                <a href="#">
-                    Portfolio
-                </a>
-                <a href="#">
-                    About
-                </a>
-                <a href="#">
-                    Contact
-                </a>
-            </div>
-        </div>
-    </nav>    
+    <header class="header">
+        <a href="#" class="logo">My Logo</a>
+        
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
     <!-- herosection -->
     <section class="hero-section-p">
@@ -237,9 +219,10 @@
         </div>
     </section>
 
-    <section class="popup hide" id="popup">
-    </section> 
+    <section class="popup hide" id="popup"></section>
+    
+    
 
-    <script src="data.js"></script>
+    <script type="module" src="data.js"></script>
 </body>
 </html>

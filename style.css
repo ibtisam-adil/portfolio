@@ -1,64 +1,65 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "poppins", sans-serif;
+}
+
+:root {
+  --main-color: #0ef;
 }
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
-
 
 body {
   background-color: #f4f5f7;
 }
 
-nav {
-  background-color: #fff;
-  padding: 10px 15rem;
-}
-
-.navbar {
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  z-index: 100;
 }
 
-.navbar h2 {
+.header.sticky {
+  border-bottom: 0.1rem solid #e4e7f7;
+}
+
+.logo {
   color: #6070ff;
   font-size: 2.5rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
+  font-weight: 600;
+  cursor: default;
 }
 
 .navbar a {
-  text-decoration: none;
   color: black;
   font-size: 2rem;
-  color: var(--text-color);
-  margin-left: 1.1rem;
-  transition: color 0.3s;
-  position: relative;
+  margin-left: 4rem;
 }
 
-.navbar a::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 50%;
-  background-color: #0ef;
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
-  transform: translateX(-50%);
+.navbar a:hover {
+  color: var(--main-color);
 }
 
-.navbar a:hover::before {
-  width: 100%;
-  visibility: visible;
+#menu-icon {
+  font-size: 3.6rem;
+  color: #6070ff;
+  display: none;
 }
 
 .header-logo {
@@ -169,6 +170,11 @@ nav {
 .btn:hover {
   color: white;
   background-color: #6070ff;
+}
+
+.btn:active {
+  background-color: #2230d2;
+  color: white;
 }
 
 .card-img img {
@@ -351,17 +357,18 @@ textarea {
 .pop-card {
   display: flex;
   flex-direction: column;
+  padding: 25px;
   gap: 20px;
   width: 90%;
   max-width: 1000px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 100;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .hidden {
@@ -369,10 +376,9 @@ textarea {
 }
 
 .pop-card #close-popup {
-  text-align: end;
   cursor: pointer;
   font-size: 30px;
-  padding-right:20px ;
+  padding-right: 20px;
 }
 
 .desc-p {
@@ -406,7 +412,6 @@ textarea {
   margin: 20px 20px 0 0;
 }
 
-
 .overlay {
   position: fixed;
   top: 0;
@@ -425,9 +430,10 @@ textarea {
   display: block;
 }
 
-
-
-
+.crossbtn {
+  display: flex;
+  justify-content: space-between;
+}
 
 @media (max-width: 1024px) {
   html {
@@ -437,10 +443,6 @@ textarea {
   .cards {
     padding: 8rem;
     gap: 10rem;
-  }
-
-  nav {
-    padding: 10px 8rem;
   }
 
   .hero-section-p {
@@ -465,16 +467,30 @@ textarea {
     font-size: 52%;
   }
 
-  .hidden {
+  #menu-icon {
     display: block;
   }
 
-  .nav-links {
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: white;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     display: none;
   }
 
-  nav {
-    padding: 10px 6rem;
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
   }
 
   .hero-section-p {
@@ -530,4 +546,3 @@ textarea {
     width: 80%;
   }
 }
-

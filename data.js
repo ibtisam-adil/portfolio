@@ -1,16 +1,9 @@
+import { arr } from "./array.js";
 
+let sectionCard = document.querySelector(".cards");
 
-let sectionCard = document.querySelector('.cards');
-
-let arr = [
-    { img: "./assets/images/poppic.svg", name: "Tonic", desc: "A daily selection of privately personalized reads; no accounts or sign-ups required.", work: ['CANOPY', 'Back End Dev', '2015'], lang: ['html', 'css', 'javaScript', 'Ruby on rails']},
-    { img: "./assets/images/poppic.svg", name: "Multi-Post Stories", desc: "Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.", work: ['FACEBOOK', 'Full Stack Dev', '2015'], lang: ['html', 'css', 'javaScript', 'Ruby on rails']},
-    { img: "./assets/images/poppic.svg", name: "Facebook 360", desc: "Exploring the future of media in Facebook's first Virtual Reality app; a place to discover and enjoy 360 photos and videos on Gear VR.", work: ['FACEBOOK', 'Full Stack Dev', '2015'], lang: ['html', 'css', 'javaScript', 'Ruby on rails']},
-    { img: "./assets/images/poppic.svg", name: "Uber Navigation", desc: "A smart assistant to make driving more safe, efficient, and fun by unlocking your most expensive computer: your car.", work: ['UBER', 'Lead Developer', '2018'], lang: ['html', 'css', 'javaScript', 'Ruby on rails']}
-];
-
-let cardHTMLs = arr.map((val,i)=>{
-    return `
+let cardHTMLs = arr.map((val, id) => {
+  return `
         <div class="card-one">
             <div class="card-img">
                 <img src="${val.img}"/>
@@ -34,40 +27,47 @@ let cardHTMLs = arr.map((val,i)=>{
                     <p>${val.lang[3]}</p>
                     
                 </div>
-                <button class="btn" onclick="openPopup(${i})">See projects</button>
+                <button id="${id}" class="btn">See projects</button>
             </div>
         </div>
     `;
 });
 
-sectionCard.innerHTML = cardHTMLs.join('');
+sectionCard.innerHTML = cardHTMLs.join("");
 
+let a = document.querySelector(".popup");
 
-let a = document.querySelector(".popup")
+let button = document.querySelectorAll(".btn");
+button.forEach((btn) => {
+  btn.addEventListener("click", (butn) => {
+    openPopup(butn.target.id);
+  });
+});
 
-function openPopup(i){
-    let b = arr[i]
-    console.log(b)
-    a.innerHTML = `
+function openPopup(id) {
+  let b = arr[id];
+  a.innerHTML = `
     <div class="overlay"></div>
         <div class="pop-card">
-            <p id="close-popup" onclick="closePopup()">&times;</p>
-            <div class="content-heading">
-                <h3 class="Bold-h">Tonic</h3>
+            <div class="crossbtn">
+                <div class="content-heading">
+                <h3 class="Bold-h">${b.name}</h3>
                 <div class="info">
-                    <p>CANOPY</p>
+                    <p>${b.work[0]}</p>
                     <img src="./assets/images/dot.png"/>
-                    <p class="light">Back End Dev</p>
+                    <p class="light">${b.work[1]}</p>
                     <img src="./assets/images/dot.png"/>
-                    <p class="light">2015</p>
+                    <p class="light">${b.work[2]}</p>
                 </div>
-            </div>
+                </div>
+                <p id="close-popup">&times;</p>
+            </div>    
             <div class="popcard-img">
                 <img src="${b.img}"/>
             </div>
             <div class="popcard-content">
                 <div class="popcard-desc">
-                    <p class="desc-p">${b.desc}</p>
+                    <p class="desc-p">${b.detailedDesc}</p>
                     </div>
                 <div class="btn-lang">
                     <div class="content-lang">
@@ -84,13 +84,36 @@ function openPopup(i){
                 </div>
             </div>
         </div>
-    `
-    let popup = document.querySelector(".overlay");
-    popup.classList.add("open-popup");
-    a.classList.remove("hide");
-}
+    `;
 
-function closePopup(){
+  let popup = document.querySelector(".overlay");
+
+  popup.classList.add("open-popup");
+  a.classList.remove("hide");
+
+  let closePopup = document.querySelector("#close-popup");
+  closePopup.addEventListener("click", () => {
     popup.classList.remove("open-popup");
     a.classList.add("hide");
+  });
 }
+
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+};
+
+// remove toggle icon and navbar
+window.onscroll = () => {
+
+
+  let header = document.querySelector("header");
+
+  header.classList.toggle("sticky", window.scrollY > 100);
+
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
+};
