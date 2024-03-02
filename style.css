@@ -352,6 +352,11 @@ textarea {
   margin: 0 auto;
 }
 
+.mod:hover {
+  color: #6070ff;
+  background-color: #fff;
+}
+
 .hide-popup {
   display: none;
 }
