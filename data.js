@@ -1,73 +1,80 @@
-import { arr } from "./array.js";
+import { projects } from "./array.js";
 
-let sectionCard = document.querySelector(".cards");
+const sectionCard = document.querySelector(".cards-section");
 
-let cardHTMLs = arr.map((val, id) => {
+const generateCardHTML = (project, id) => {
   return `
-        <div class="card-one">
+        <div class="all-cards">
             <div class="card-img">
-                <img src="${val.img}"/>
+                <img src="${project.img}"/>
             </div>
             <div class="card-content">
                 <div class="content-heading">
-                    <h3 class="Bold-h">${val.name}</h3>
+                    <h3 class="Bold-h">${project.name}</h3>
                     <div class="info">
-                        <p>${val.work[0]}</p>
+                        <p>${project.work[0]}</p>
                         <img src="./assets/images/dot.png"/>
-                        <p class="light">${val.work[1]}</p>
+                        <p class="light">${project.work[1]}</p>
                         <img src="./assets/images/dot.png"/>
-                        <p class="light">${val.work[2]}</p>
+                        <p class="light">${project.work[2]}</p>
                     </div>
                 </div>
-                <p class="content-p">${val.desc}</p>
+                <p class="project-description">${project.desc}</p>
                 <div class="content-lang">
-                    <p>${val.lang[0]}</p>
-                    <p>${val.lang[1]}</p>
-                    <p>${val.lang[2]}</p>
-                    <p>${val.lang[3]}</p>
-                    
+                    <p>${project.lang[0]}</p>
+                    <p>${project.lang[1]}</p>
+                    <p>${project.lang[2]}</p>
+                    <p>${project.lang[3]}</p>
                 </div>
                 <button id="${id}" class="btn">See projects</button>
             </div>
         </div>
     `;
-});
+};
 
-sectionCard.innerHTML = cardHTMLs.join("");
+const renderCards = () => {
+  const cardHTMLs = projects.map((project, id) =>
+    generateCardHTML(project, id)
+  );
+  sectionCard.innerHTML = cardHTMLs.join("");
+};
 
-let a = document.querySelector(".popup");
+renderCards();
 
-let button = document.querySelectorAll(".btn");
+const sectionPopup = document.querySelector(".popup");
+
+const button = document.querySelectorAll(".btn");
+
 button.forEach((btn) => {
-  btn.addEventListener("click", (butn) => {
-    openPopup(butn.target.id);
+  btn.addEventListener("click", (btn) => {
+    openPopup(btn.target.id);
   });
 });
 
 function openPopup(id) {
-  let b = arr[id];
-  a.innerHTML = `
+  const project = projects[id];
+  sectionPopup.innerHTML = `
     <div class="overlay"></div>
         <div class="pop-card">
             <div class="crossbtn">
                 <div class="content-heading">
-                <h3 class="Bold-h">${b.name}</h3>
+                <h3 class="Bold-h">${project.name}</h3>
                 <div class="info">
-                    <p>${b.work[0]}</p>
+                    <p>${project.work[0]}</p>
                     <img src="./assets/images/dot.png"/>
-                    <p class="light">${b.work[1]}</p>
+                    <p class="light">${project.work[1]}</p>
                     <img src="./assets/images/dot.png"/>
-                    <p class="light">${b.work[2]}</p>
+                    <p class="light">${project.work[2]}</p>
                 </div>
                 </div>
                 <p id="close-popup">&times;</p>
             </div>    
             <div class="popcard-img">
-                <img src="${b.img}"/>
+                <img src="${project.img}"/>
             </div>
             <div class="popcard-content">
                 <div class="popcard-desc">
-                    <p class="desc-p">${b.detailedDesc}</p>
+                    <p class="desc-p">${project.detailedDesc}</p>
                     </div>
                 <div class="btn-lang">
                     <div class="content-lang">
@@ -86,34 +93,34 @@ function openPopup(id) {
         </div>
     `;
 
-  let popup = document.querySelector(".overlay");
+  const overlay = document.querySelector(".overlay");
 
-  popup.classList.add("open-popup");
-  a.classList.remove("hide");
+  overlay.classList.add("add-overlay");
+  sectionPopup.classList.remove("hide-popup");
 
-  let closePopup = document.querySelector("#close-popup");
+  const closePopup = document.querySelector("#close-popup");
   closePopup.addEventListener("click", () => {
-    popup.classList.remove("open-popup");
-    a.classList.add("hide");
+    overlay.classList.remove("add-overlay");
+    sectionPopup.classList.add("hide-popup");
   });
-}
+};
 
-let menuIcon = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
+const headerElement = document.querySelector("header");
+const logo = document.querySelector(".logo");
+const menuIcon = document.querySelector("#menu-icon");
+const navbar = document.querySelector(".navbar");
 
 menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
+  logo.classList.toggle("menu-logo");
   navbar.classList.toggle("active");
+  headerElement.classList.toggle("hr-color");
 };
 
 // remove toggle icon and navbar
 window.onscroll = () => {
-
-
-  let header = document.querySelector("header");
-
+  const header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 100);
-
   menuIcon.classList.remove("bx-x");
   navbar.classList.remove("active");
 };
