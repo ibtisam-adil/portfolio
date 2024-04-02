@@ -528,6 +528,10 @@ textarea {
     gap: 6rem;
   }
 
+  .all-cards:nth-child(even) {
+    flex-direction: column;
+  }
+
   .all-cards {
     flex-direction: column;
   }
@@ -568,3 +572,9 @@ textarea {
     width: 80%;
   }
 }
+
+
+
+
+
+
