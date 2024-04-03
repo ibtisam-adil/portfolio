@@ -77,7 +77,7 @@ Step 1: if you don't have git installed on your machine you can download it from
 
 Once you have git installed on your machine you can clone your project by running the command below to clone your project to your local machine
 
-`git clone https://github.com/ibtisam-adil/To-do-List.git`
+`git clone https://github.com/ibtisam-adil/portfolio.git`
 
 Alternatively, you can download the zip file of your project by clicking on the `Code` button on the right side of your project page and clicking on `Download ZIP`
 
