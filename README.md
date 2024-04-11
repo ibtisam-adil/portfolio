@@ -50,7 +50,6 @@ Dynamically creating a portfolio website involves generating HTML elements like 
 - **It has CSS**
 - **It has javascript**
 - **Responsive design**
-- **Feature speakers part is fully made dynamically by JavaScript**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,7 +101,6 @@ Step 2: Locate the folder where you cloned your project to and open the `index.h
 - **More detailed**
 - **Master HTML**
 - **deskstop version**
--
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 ## 📼 Project Walkthrough <a name="project-walk"></a>
