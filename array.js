@@ -33,7 +33,7 @@ let projects = [
     },
     { 
         img: "./assets/images/pokemon.png", 
-        name: "Uber Navigation", 
+        name: "Pokemon", 
         desc: "Explore Pokémon in a dynamic web app with intuitive navigation, liking, and commenting features.", 
         work: ['Self-employed', 'Lead Developer', '2024'], 
         lang: ['html', 'css', 'javaScript'], 
