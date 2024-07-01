@@ -28,7 +28,7 @@
 
 # 🎬 Portfolio <a name="about-project"></a>
 
-Dynamically creating a portfolio website involves generating HTML elements like project cards and implementing interactivity, such as marking tasks as completed or deleting them. This typically entails event handling and manipulating the Document Object Model (DOM) through JavaScript code.
+Dynamically creating a portfolio website involves generating HTML elements like project cards and implementing interactivity, such as marking tasks as completed or deleting them. This typically entails event handling and manipulating the Document Object Model (DOM) through JavaScript code
 
 ## 🛠 Built With <a name="built-with"></a>
 
